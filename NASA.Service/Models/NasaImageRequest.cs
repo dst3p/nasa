@@ -1,17 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using System.Web.ModelBinding;
 
 namespace NASA.API.Models
 {
     public class NasaPhotoRequest
     {
         /// <summary>
-        /// The key from NASA granting API access. 
+        /// The key from NASA granting API access.
         /// Can pass 'DEMO_KEY' for testing purpose, but this is subject to a lower rate limit.
         /// </summary>
         [Required]

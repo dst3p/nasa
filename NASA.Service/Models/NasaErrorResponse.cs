@@ -11,6 +11,4 @@
 
         public string message { get; set; }
     }
-
-
 }
