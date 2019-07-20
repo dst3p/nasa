@@ -144,12 +144,13 @@
     </Compile>
     <Compile Include="Models\ImageFileResponse.cs" />
     <Compile Include="Models\NasaErrorResponse.cs" />
-    <Compile Include="Models\NasaImageResponse.cs" />
+    <Compile Include="Models\NasaPhoto.cs" />
+    <Compile Include="Models\NasaPhotoResponse.cs" />
     <Compile Include="Models\ResponseTypes\BadRequest.cs" />
     <Compile Include="Models\ResponseTypes\OkResponse.cs" />
-    <Compile Include="Models\NasaImageRequest.cs" />
+    <Compile Include="Models\NasaPhotoRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\NasaImageRepository.cs" />
+    <Compile Include="Repository\NasaPhotoRepository.cs" />
     <Compile Include="Services\ImageFileService.cs" />
   </ItemGroup>
   <ItemGroup>

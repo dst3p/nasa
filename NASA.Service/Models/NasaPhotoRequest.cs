@@ -14,7 +14,7 @@ namespace NASA.API.Models
         public string apiKey { get; set; }
 
         /// <summary>
-        /// The rover that's taking the images.
+        /// The rover that's taking the images. Options are 'curiousity', 'opportunity', and 'spirit'.
         /// </summary>
         [Required]
         public string rover { get; set; }

@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDYR.NASA", "WNDYR.NASA\WNDYR.NASA.csproj", "{6FFE9806-62B5-4E55-AF93-38AF51761975}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NASA.API", "NASA.Service\NASA.API.csproj", "{C66C7F8E-9682-469D-81CC-7EF53AAE0294}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDYR.Tests", "WNDYR.Tests\WNDYR.Tests.csproj", "{790DBACF-2750-42DB-9DBD-DA574473833B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NASA.Tests", "WNDYR.Tests\NASA.Tests.csproj", "{790DBACF-2750-42DB-9DBD-DA574473833B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CAA3116A-DCFD-4F31-B8D9-379F242126B4}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,10 +18,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6FFE9806-62B5-4E55-AF93-38AF51761975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FFE9806-62B5-4E55-AF93-38AF51761975}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FFE9806-62B5-4E55-AF93-38AF51761975}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FFE9806-62B5-4E55-AF93-38AF51761975}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C66C7F8E-9682-469D-81CC-7EF53AAE0294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C66C7F8E-9682-469D-81CC-7EF53AAE0294}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C66C7F8E-9682-469D-81CC-7EF53AAE0294}.Release|Any CPU.ActiveCfg = Release|Any CPU
