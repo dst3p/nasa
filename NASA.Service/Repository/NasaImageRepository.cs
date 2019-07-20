@@ -7,16 +7,16 @@ using System.Web;
 
 namespace NASA.API.Repository
 {
-    public class NasaImageRepository
+    public class NasaPhotoRepository
     {
         private string _baseEndpoint;
 
-        public NasaImageRepository(string baseEndpoint)
+        public NasaPhotoRepository(string baseEndpoint)
         {
             _baseEndpoint = baseEndpoint;
         }
 
-        public IRestResponse Get(NasaImageRequest imageRequest)
+        public IRestResponse Get(NasaPhotoRequest imageRequest)
         {
             var client = new RestClient(_baseEndpoint);
             var request = new RestRequest(imageRequest.resource);

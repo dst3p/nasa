@@ -13,6 +13,8 @@ namespace NASA.API.Services
     {
         private readonly string _directory;
 
+        public const string BaseSavePath = "C:/Nasa/Images/";
+
         public ImageFileService(string directory)
         {
             _directory = directory;
@@ -44,7 +46,7 @@ namespace NASA.API.Services
                 // Get the image bytes from the image link in the photo response
                 byte[] imageBytes = webClient.DownloadData(p.Source);
 
-                // Get the last fragment of the url
+                // Get the last fragment of the url which is the filename
                 var fileName = p.Source.Split('/').Last();
 
                 // Write the file to the directory
