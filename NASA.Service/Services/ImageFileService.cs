@@ -9,15 +9,13 @@ namespace NASA.API.Services
 {
     public class ImageFileService
     {
-        public readonly string BasePath;
-
-        private DateTime EarthDate { get; set; }
+        private string _path;
 
         public const string DefaultBasePath = "C:/Nasa/Images/";
 
         public ImageFileService(string directory = null)
         {
-            BasePath = directory ?? DefaultBasePath;
+            _path = directory ?? DefaultBasePath;
         }
 
         /// <summary>
@@ -27,19 +25,24 @@ namespace NASA.API.Services
         /// <returns></returns>
         public ImageFileResponse HandleNasaResponse(NasaPhotoResponse nasaResponse)
         {
+            var imageFileResponse = new ImageFileResponse
+            {
+                count = nasaResponse.Photos.Count,
+                isSuccessful = false
+            };
+
             if (!nasaResponse.Photos.Any())
             {
-                return null;
+                return imageFileResponse;
             }
 
-            // get the date from the first photo
-            EarthDate = nasaResponse.Photos[0].EarthDate;
-
+            // get the date from the first photo and put on the end of the path
+            _path = $"{_path}/{nasaResponse.Photos[0].EarthDate:yyyyMMdd}";
 
             // Create directory if it doesn't already exist
-            if (!System.IO.Directory.Exists($"{BasePath}/{EarthDate:yyyyMMdd}"))
+            if (!System.IO.Directory.Exists(_path))
             {
-                System.IO.Directory.CreateDirectory($"{BasePath}/{EarthDate:yyyyMMdd}");
+                System.IO.Directory.CreateDirectory(_path);
             }
 
             // Process each image concurrently
@@ -49,7 +52,7 @@ namespace NASA.API.Services
             {
                 count = nasaResponse.Photos.Count,
                 isSuccessful = true,
-                location = BasePath
+                location = _path
             };
         }
 
@@ -64,7 +67,7 @@ namespace NASA.API.Services
                 var fileName = p.Source.Split('/').Last();
 
                 // Write the file to the directory
-                File.WriteAllBytes($"{BasePath}/{EarthDate:yyyyMMdd}/{fileName}", imageBytes);
+                File.WriteAllBytes($"{_path}/{fileName}", imageBytes);
             }
         }
     }

@@ -10,19 +10,59 @@ namespace NASA.Tests
     public class ImageFileServiceTests
     {
         [TestMethod]
+        public void CanHandleNasaResponseWithNoPhotos()
+        {
+            var imageFileService = new ImageFileService();
+
+            var imageFileResponse = imageFileService.HandleNasaResponse(new NasaPhotoResponse());
+
+            Assert.IsNotNull(imageFileResponse);
+        }
+
+        [TestMethod]
         public void CanSetDefaultSaveDirectory()
         {
             var imageFileService = new ImageFileService();
 
-            Assert.AreEqual(ImageFileService.DefaultBasePath, imageFileService.BasePath);
+            var photoResponse = new NasaPhotoResponse
+            {
+                Photos = new List<NasaPhoto>
+                {
+                    new NasaPhoto
+                    {
+                        EarthDate = DateTime.Now,
+                        Source = "https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG"
+                    }
+                }
+            };
+
+            var imageFileResponse = imageFileService.HandleNasaResponse(photoResponse);
+
+            Assert.IsTrue(imageFileResponse.location.StartsWith(ImageFileService.DefaultBasePath));
         }
 
         [TestMethod]
         public void CanOverrideDefaultSaveDirectory()
         {
-            var imageFileService = new ImageFileService("C:/");
+            var newPath = "C:/NASA/Images/OverrideSavePath/";
 
-            Assert.AreNotEqual(ImageFileService.DefaultBasePath, imageFileService.BasePath);
+            var imageFileService = new ImageFileService(newPath);
+
+            var photoResponse = new NasaPhotoResponse
+            {
+                Photos = new List<NasaPhoto>
+                {
+                    new NasaPhoto
+                    {
+                        EarthDate = DateTime.Now,
+                        Source = "https://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01000/opgs/edr/fcam/FLB_486265257EDR_F0481570FHAZ00323M_.JPG"
+                    }
+                }
+            };
+
+            var imageFileResponse = imageFileService.HandleNasaResponse(photoResponse);
+
+            Assert.IsTrue(imageFileResponse.location.StartsWith(newPath));
         }
 
         [TestMethod]
