@@ -1,5 +1,7 @@
 # NASA Mars Rover API Integration
 
+[![Build Status](https://redbeardss.visualstudio.com/DevOps/_apis/build/status/dst3p.nasa?branchName=master)](https://redbeardss.visualstudio.com/DevOps/_build/latest?definitionId=1&branchName=master)
+
 An API that integrates with the NASA API to pull images taken by a rover on Mars and save them to a default or specified location.
 
 Details of the NASA API can be found at https://api.nasa.gov/api.html#MarsPhotos
