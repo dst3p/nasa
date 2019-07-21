@@ -1,95 +1,85 @@
 {
-	"info": {
-		"_postman_id": "449ba967-3a16-4438-966d-dfcb586bdabc",
-		"name": "NASA",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "NASA Image Request - Empty Request",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"type": "text",
-						"value": "application/json"
-					}
-				],
-				"url": {
-					"raw": "https://localhost:44378/nasa/photos?imageDate=&apiKey=&rover=",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44378",
-					"path": [
-						"nasa",
-						"photos"
-					],
-					"query": [
-						{
-							"key": "imageDate",
-							"value": ""
-						},
-						{
-							"key": "apiKey",
-							"value": ""
-						},
-						{
-							"key": "rover",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "NASA Image Request",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://localhost:44378/nasa/photos?imageDate=2018-9-10&apiKey=ugVa3gLFzsodcHVnUinazIJStPjiPdcP6A1ivEJe&rover=curiosity",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "44378",
-					"path": [
-						"nasa",
-						"photos"
-					],
-					"query": [
-						{
-							"key": "imageDate",
-							"value": "2018-9-10"
-						},
-						{
-							"key": "apiKey",
-							"value": "ugVa3gLFzsodcHVnUinazIJStPjiPdcP6A1ivEJe"
-						},
-						{
-							"key": "rover",
-							"value": "curiosity"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "449ba967-3a16-4438-966d-dfcb586bdabc",
+    "name": "NASA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "NASA Image Request - Empty Request",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "type": "text",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:44378/nasa/photos?imageDate=&apiKey=&rover=",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "44378",
+          "path": ["nasa", "photos"],
+          "query": [
+            {
+              "key": "imageDate",
+              "value": ""
+            },
+            {
+              "key": "apiKey",
+              "value": ""
+            },
+            {
+              "key": "rover",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "NASA Image Request",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:44378/nasa/photos?imageDate=2018-9-10&apiKey=ugVa3gLFzsodcHVnUinazIJStPjiPdcP6A1ivEJe&rover=curiosity",
+          "protocol": "https",
+          "host": ["localhost"],
+          "port": "44378",
+          "path": ["nasa", "photos"],
+          "query": [
+            {
+              "key": "imageDate",
+              "value": "2018-9-10"
+            },
+            {
+              "key": "apiKey",
+              "value": "ugVa3gLFzsodcHVnUinazIJStPjiPdcP6A1ivEJe"
+            },
+            {
+              "key": "rover",
+              "value": "curiosity"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }
