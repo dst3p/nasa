@@ -1,7 +1,8 @@
 # NASA Mars Rover API Integration
 
-An API that integrates with the NASA API to pull images taken by a rover on Mars and
-save them to a default or specified location.
+An API that integrates with the NASA API to pull images taken by a rover on Mars and save them to a default or specified location.
+
+Details of the NASA API can be found at https://api.nasa.gov/api.html#MarsPhotos
 
 ## Getting Started
 
