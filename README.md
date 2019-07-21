@@ -7,11 +7,34 @@ save them to a default or specified location.
 
 ### Requirements
 
-- Visual Studio
-- .NET 4.7.2
-- RestSharp (free on nuget)
-- Newtonsoft.Json (free on nuget)
-- Swashbuckle (free on nuget)
+| Tool | Location | Purpose |
+|---|---| --- |
+| Visual Studio | [Download 2019 Community](https://visualstudio.microsoft.com/vs/) | IDE |
+| .NET 4.7.2 | [Link](https://dotnet.microsoft.com/download/dotnet-framework/net472) | SDK (Included with VS 2019 or available at the link) |
+| RestSharp | Nuget | Awesome library for making REST requests
+| Newtonsoft.Json | Nuget | Makes working with JSON easy
+| Swashbuckle | Nuget | Creates a UI and JSON for Swagger API
+| Microsoft.CodeAnalysis.FxCopAnalyzers | Nuget | Static analysis
+
+### Clone the Repo
+
+```bash
+git clone https://github.com/dst3p/nasa.git
+```
+
+### Running Code
+
+After installing Visual Studio with web development tools and ensuring you have the proper framework version (4.7.2), open the `.sln` file. Required nuget packages are already defined in the `packages.json` file. **Build > Build Solution** or <kbd>CTRL</kbd>+<kbd>B</kbd> will build the project and should download and restore all nuget package. If this doesn't happen manually, you can get the packages by running the following commands in the Package Manager Console (**Tools > Nuget Package Manager > Package Manager Console**):
+
+| | |
+|---|---|
+| RestSharp<br />*Note: This will also download Newtonsoft.JSON* | `Install-Package RestSharp`|
+| Swashbuckle | `Install-Package Swashbuckle` |
+| Microsoft.CodeAnalysis.FxCopAnalyzers | `Install-Package Microsoft.CodeAnalysis.FxCopAnalyzers`|
+
+Once these are installed, you can run the project by pressing <kbd>F5</kbd>. A webpage will load at `https://localhost/{port}/swagger` which will automatically redirect to the Swagger test harness.
+
+Your code is now ready to make API requests.
 
 ## Sample API requests
 
